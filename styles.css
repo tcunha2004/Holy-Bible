@@ -501,7 +501,7 @@ body {
   width: 100%;
   background-color: #2b3137;
   border-left: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 4rem 1rem 1rem 1rem;
+  padding: 1rem;
 }
 
 .assistant.expanded .assistant-content {
@@ -839,5 +839,9 @@ body {
   /* Ajustes no tamanho do texto */
   .verses-text {
     font-size: 1rem;
+  }
+
+  .assistant-content{
+    padding: 6rem 1rem 1rem 1rem;
   }
 }
