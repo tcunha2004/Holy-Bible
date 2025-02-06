@@ -31,7 +31,7 @@ let promptCount = 0;
 async function checkPaidPlan(email, senha) {
   try {
     const response = await fetch(
-      `http://localhost:8080/api/plan/check?email=${encodeURIComponent(
+      `https://holy-bible-java-production.up.railway.app/api/plan/check?email=${encodeURIComponent(
         email
       )}&senha=${encodeURIComponent(senha)}`
     );
@@ -46,7 +46,7 @@ async function checkPaidPlan(email, senha) {
 async function incrementPromptCount(userId) {
   try {
     const response = await fetch(
-      `http://localhost:8080/api/prompt/incremento`,
+      `https://holy-bible-java-production.up.railway.app/api/prompt/incremento`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -195,7 +195,7 @@ function saveState() {
 // Initialize content
 async function initializeContent() {
   try {
-    const response = await fetch("http://localhost:8080/api/books");
+    const response = await fetch("https://holy-bible-java-production.up.railway.app/api/books");
     books = await response.json(); // Armazena os livros globalmente
     displayBooks(books);
 
@@ -547,7 +547,7 @@ async function loadChapter() {
 
     const bookAbbrev = getBookAbbrev(currentBook.nome);
     const response = await fetch(
-      `http://localhost:8080/api/chapters/${currentVersion}/${bookAbbrev}/${currentChapter}`
+      `https://holy-bible-java-production.up.railway.app/api/chapters/${currentVersion}/${bookAbbrev}/${currentChapter}`
     );
     const data = await response.json();
 
@@ -733,7 +733,7 @@ function addMessage(text, isUser = false) {
 // Função para fazer a requisição ao backend
 async function generateResponse(prompt) {
   try {
-    const response = await fetch("http://localhost:8080/api/generate", {
+    const response = await fetch("https://holy-bible-java-production.up.railway.app/api/generate", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -772,7 +772,7 @@ async function handleMessage() {
       if (!hasPaidPlan) {
         // 2. Se não tem plano pago, verifica o contador atual
         const response = await fetch(
-          `http://localhost:8080/api/prompt/count/${user.id}`
+          `https://holy-bible-java-production.up.railway.app/api/prompt/count/${user.id}`
         );
         const currentCount = await response.json();
 

@@ -22,7 +22,7 @@ registerButton.addEventListener("click", async () => {
   }
 
   try {
-    const response = await fetch("http://localhost:8080/api/auth/register", {
+    const response = await fetch("https://holy-bible-java-production.up.railway.app/api/auth/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ nome: name, email, senha: password }),
@@ -53,7 +53,7 @@ loginButton.addEventListener("click", async () => {
 
   try {
     const response = await fetch(
-      `http://localhost:8080/api/auth/login?email=${encodeURIComponent(
+      `https://holy-bible-java-production.up.railway.app/api/auth/login?email=${encodeURIComponent(
         email
       )}&senha=${encodeURIComponent(password)}`
     );
