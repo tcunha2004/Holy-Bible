@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Holy Bible</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="auth-container" class="auth-container">
+      <!-- Login Form -->
+      <div id="login-form" class="auth-form">
+        <h1 class="auth-title">Holy Bible</h1>
+        <div class="form-group">
+          <label for="login-email">Email</label>
+          <input
+            type="email"
+            id="login-email"
+            class="auth-input"
+            placeholder="Seu email"
+          />
+        </div>
+        <div class="form-group">
+          <label for="login-password">Senha</label>
+          <input
+            type="password"
+            id="login-password"
+            class="auth-input"
+            placeholder="Sua senha"
+          />
+        </div>
+        <button id="login-button" class="auth-button">Entrar</button>
+        <p class="auth-switch">
+          Não tem uma conta?
+          <a href="cadastro.html" id="show-register">Cadastre-se</a>
+        </p>
+        <div id="login-error" class="auth-error"></div>
+      </div>
+
+      <!-- Register Form -->
+      <div id="register-form" class="auth-form hidden">
+        <h1 class="auth-title">Criar Conta</h1>
+        <div class="form-group">
+          <label for="register-name">Nome</label>
+          <input
+            type="text"
+            id="register-name"
+            class="auth-input"
+            placeholder="Seu nome"
+          />
+        </div>
+        <div class="form-group">
+          <label for="register-email">Email</label>
+          <input
+            type="email"
+            id="register-email"
+            class="auth-input"
+            placeholder="Seu email"
+          />
+        </div>
+        <div class="form-group">
+          <label for="register-password">Senha</label>
+          <input
+            type="password"
+            id="register-password"
+            class="auth-input"
+            placeholder="Sua senha"
+          />
+        </div>
+        <button id="register-button" class="auth-button">Cadastrar</button>
+        <p class="auth-switch">
+          Já tem uma conta? <a href="#" id="show-login">Fazer login</a>
+        </p>
+        <div id="register-error" class="auth-error"></div>
+      </div>
+
+      <div id="auth-loading" class="auth-loading hidden">
+        <div class="loading-spinner"></div>
+      </div>
+    </div>
+
+    <script src="login.js"></script>
+  </body>
+</html>

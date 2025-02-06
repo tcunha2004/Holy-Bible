@@ -1,0 +1,136 @@
+/* Importe os estilos base existentes */
+@import "styles.css";
+
+.payment-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #2b3137 0%, #363b42 100%);
+  position: relative;
+}
+
+.payment-card {
+  background-color: #363b42;
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.payment-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #e8e8e8;
+}
+
+.plan-details {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.price {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #4a90e2;
+  margin: 1rem 0;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.features li {
+  margin: 0.75rem 0;
+  color: rgba(232, 232, 232, 0.9);
+}
+
+.qr-code-container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+}
+
+.copy-button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #4a90e2;
+  border: none;
+  border-radius: 0.75rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.copy-button:hover {
+  background-color: #357abd;
+}
+
+.payment-instructions {
+  text-align: center;
+  color: rgba(232, 232, 232, 0.7);
+  margin: 1rem 0;
+}
+
+.back-button {
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background-color: #363b42;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  color: #e8e8e8;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 100;
+}
+
+.back-button:hover {
+  background-color: #404650;
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.back-button:active {
+  transform: translateY(0);
+}
+
+/* Ajustes para mobile */
+@media (max-width: 950px) {
+  .payment-container {
+    padding: 1rem;
+    padding-top: 5rem; /* Espaço extra para o botão fixo */
+  }
+
+  .payment-card {
+    padding: 1.5rem;
+  }
+
+  .payment-title {
+    font-size: 2rem;
+  }
+
+  .back-button {
+    top: 1rem;
+    left: 1rem;
+  }
+}

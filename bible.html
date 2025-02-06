@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Holy Bible</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <button class="menu-toggle" id="menu-toggle">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Left Sidebar -->
+      <div class="sidebar">
+        <div class="sidebar-header">
+          <h1 class="title">Holy Bible</h1>
+        </div>
+
+        <div class="user-actions">
+          <div class="user-profile">
+            <button id="profile-button" class="profile-button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <span id="profile-name">Usuário</span>
+            </button>
+
+            <div id="profile-dropdown" class="profile-dropdown hidden">
+              <div class="profile-info">
+                <h3>Perfil</h3>
+                <div class="info-item">
+                  <label>Nome:</label>
+                  <span id="dropdown-name"></span>
+                </div>
+                <div class="info-item">
+                  <label>Email:</label>
+                  <span id="dropdown-email"></span>
+                </div>
+                <div class="info-item">
+                  <label>Senha:</label>
+                  <div class="password-container">
+                    <span id="dropdown-password"></span>
+                    <button id="toggle-password" class="toggle-password">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                        ></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button id="logout-button" class="logout-button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+              <polyline points="16 17 21 12 16 7"></polyline>
+              <line x1="21" y1="12" x2="9" y2="12"></line>
+            </svg>
+          </button>
+        </div>
+
+        <div class="version-selector">
+          <label class="label">Versão</label>
+          <select id="version" class="select">
+            <option value="acf">Almeida Corrigida Fiel</option>
+            <option value="nvi">Nova Versão Internacional</option>
+            <option value="ra">Almeida Revista e Atualizada</option>
+          </select>
+        </div>
+
+        <nav class="books-nav">
+          <!-- Books will be loaded dynamically -->
+        </nav>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <div class="content-container">
+          <h2 class="chapter-title"></h2>
+          <div id="verses">
+            <div class="welcome-message">
+              <h2>Bem-vindo!</h2>
+              <p>Vamos aprofundar na palavra de Deus?</p>
+              <p>Escolha seu livro</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Holy AI Assistant -->
+      <div id="holy-assistant" class="assistant">
+        <button id="toggle-assistant" class="toggle-button">Holy</button>
+
+        <div class="assistant-content">
+          <div class="assistant-header">
+            <h2 class="assistant-title">Holy</h2>
+            <button id="minimize-assistant" class="minimize-button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </button>
+          </div>
+
+          <div id="messages" class="messages">
+            <div class="message holy">
+              <p>
+                Que a paz do Senhor esteja contigo! Sou o Holy, seu assistente
+                espiritual, e estou aqui para ajudá-lo a compreender mais
+                profundamente as Sagradas Escrituras. Sinta-se à vontade para
+                fazer perguntas ou selecione algum versiculo que gostaria de
+                esclarecimento.
+              </p>
+            </div>
+          </div>
+
+          <div class="input-container">
+            <input
+              type="text"
+              id="message-input"
+              placeholder="Pergunte ao Holy sobre a Bíblia..."
+              class="message-input"
+            />
+            <button class="send-button">
+              <span class="send-text">Enviar</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro - Holy Bible</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cadastro.css" />
+  </head>
+  <body>
+    <div class="register-container">
+      <div class="register-form">
+        <h1 class="register-title">Holy Bible</h1>
+        <h2 class="register-subtitle">Criar Conta</h2>
+        
+        <div class="form-group">
+          <label for="name">Nome</label>
+          <input
+            type="text"
+            id="name"
+            class="register-input"
+            placeholder="Seu nome completo"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            class="register-input"
+            placeholder="Seu melhor email"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Senha</label>
+          <input
+            type="password"
+            id="password"
+            class="register-input"
+            placeholder="Crie uma senha forte"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="confirm-password">Confirmar Senha</label>
+          <input
+            type="password"
+            id="confirm-password"
+            class="register-input"
+            placeholder="Confirme sua senha"
+          />
+        </div>
+
+        <button id="register-button" class="register-button">Criar Conta</button>
+        
+        <p class="login-link">
+          Já tem uma conta? <a href="index.html">Fazer login</a>
+        </p>
+
+        <div id="register-error" class="register-error"></div>
+      </div>
+
+      <div id="register-loading" class="register-loading hidden">
+        <div class="loading-spinner"></div>
+      </div>
+    </div>
+
+    <script src="cadastro.js"></script>
+  </body>
+</html>
