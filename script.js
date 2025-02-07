@@ -70,6 +70,41 @@ function truncateEmail(email) {
   return `${localPart.substring(0, 5)}(...)@${domain}`;
 }
 
+// Função para mostrar o balão de introdução do Holy
+function showHolyIntro() {
+  const introMessage = document.createElement("div");
+  introMessage.style.cssText = `
+    position: fixed;
+    bottom: 6.5rem;
+    right: 4rem;
+    background: #363b42;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    z-index: 999;
+    animation: fadeIn 1.5s ease-in-out;
+  `;
+
+  introMessage.innerHTML = `
+    <p style="color: #e8e8e8; margin: 0; font-size: 0.9rem;">
+      Olá! Eu sou o Holy, seu assistente espiritual. Estou aqui para ajudar você a compreender melhor a palavra de Deus. Clique em qualquer versículo para conversarmos sobre ele!
+    </p>
+  `;
+
+  document.body.appendChild(introMessage);
+
+  setTimeout(() => {
+    introMessage.style.animation = "fadeOut 1.5s ease-in-out";
+    setTimeout(() => {
+      document.body.removeChild(introMessage);
+    }, 500);
+  }, 5000);
+
+  localStorage.setItem("holyIntroShown", "true");
+}
+
 // Initialize profile
 function initializeProfile() {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -128,8 +163,11 @@ logoutButton.addEventListener("click", handleLogout);
 
 // Initialize
 document.addEventListener("DOMContentLoaded", () => {
-  // Verificar autenticação
+  
+  // Verifica se existe um usuário logado
   const user = JSON.parse(localStorage.getItem("user"));
+
+  // Se não houver usuário logado, redireciona para a página de login
   if (!user || !user.email) {
     window.location.href = "index.html";
     return;
@@ -137,6 +175,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Inicializar perfil
   initializeProfile();
+
+  // Verificar se é a primeira visita
+  const isFirstVisit = !localStorage.getItem("holyIntroShown");
+  if (isFirstVisit) {
+    showHolyIntro();
+  }
 
   // Mobile menu toggle
   if (menuToggle && sidebar) {
