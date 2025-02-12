@@ -274,9 +274,8 @@ function showWelcomeMessage() {
     <p>Vamos aprofundar na palavra de Deus?</p>
     <br>
     <p>1- Escolha seu livro no menu acima 📖</p>
-    <p>2- Esolha qual versao gostaria de ler 💭</p>
+    <p>2- Escolha qual versao gostaria de ler 💭</p>
     <p>3- Clique no versiculo que tem duvida ou digite sua duvida e receba ajuda do Holy! 🕊️</p>
-
   `;
   versesContainer.appendChild(welcomeDiv);
 }
